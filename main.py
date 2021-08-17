@@ -12,11 +12,13 @@ inv_file = xl.load_workbook("inventory.xlsx")
 product_list = inv_file["Sheet1"]
 product_per_supplier = {}
 total_value_per_supplier = {}
+product_under_ten = {}
 
 for product_row in range(2, product_list.max_row + 1):
     supplier_name = product_list.cell(product_row, 4).value
     inventory = product_list.cell(product_row, 2).value
     price = product_list.cell(product_row, 3).value
+    product_number = product_list.cell(product_row, 1).value
 
     # product per supplier
     if supplier_name in product_per_supplier:
@@ -31,5 +33,10 @@ for product_row in range(2, product_list.max_row + 1):
     else:
         total_value_per_supplier[supplier_name] = inventory * price
 
+    # calculate The product under 10 inventory
+    if inventory < 10:
+        product_under_ten[product_number] = inventory
+
 print(product_per_supplier)
 print(total_value_per_supplier)
+print(product_under_ten)
