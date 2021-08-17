@@ -46,4 +46,5 @@ for product_row in range(2, product_list.max_row + 1):
 print(product_per_supplier)
 print(total_value_per_supplier)
 print(product_under_ten)
+# save the change xlsx file in new one
 inv_file.save("inventory-new.xlsx")
