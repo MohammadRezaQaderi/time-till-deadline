@@ -1,5 +1,6 @@
 import openpyxl as xl
 from user import User
+from post import Post
 """message = "This is a simple message"  # string
 day = 9  # integer
 price = 19.99  # float
@@ -52,3 +53,6 @@ inv_file.save("inventory-new.xlsx")"""
 
 muhmdreza = User("mgh2711@gmail.com", "muhmdrezA", 12345, "developer")
 muhmdreza.user_get_info()
+
+new_post = Post("on a secret mission today", muhmdreza.name)
+new_post.get_post_info()
