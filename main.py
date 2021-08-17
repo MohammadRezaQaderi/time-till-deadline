@@ -19,6 +19,8 @@ for product_row in range(2, product_list.max_row + 1):
     inventory = product_list.cell(product_row, 2).value
     price = product_list.cell(product_row, 3).value
     product_number = product_list.cell(product_row, 1).value
+    # new col
+    inventory_price = product_list.cell(product_row, 5)
 
     # product per supplier
     if supplier_name in product_per_supplier:
@@ -37,6 +39,11 @@ for product_row in range(2, product_list.max_row + 1):
     if inventory < 10:
         product_under_ten[product_number] = inventory
 
+    # add value for each row :)
+    inventory_price.value = inventory * price
+
+
 print(product_per_supplier)
 print(total_value_per_supplier)
 print(product_under_ten)
+inv_file.save("inventory-new.xlsx")
