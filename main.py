@@ -1,5 +1,5 @@
 import openpyxl as xl
-
+from user import User
 """message = "This is a simple message"  # string
 day = 9  # integer
 price = 19.99  # float
@@ -8,7 +8,8 @@ list_of_months = ['January', 'February', 'March', 'April']  # list
 set_of_day = {10, 15, 35, 90}  # set
 days_and_units = {'days': 20, "unit": "hours"}  # dictionary"""
 
-inv_file = xl.load_workbook("inventory.xlsx")
+
+"""inv_file = xl.load_workbook("inventory.xlsx")
 product_list = inv_file["Sheet1"]
 product_per_supplier = {}
 total_value_per_supplier = {}
@@ -47,4 +48,7 @@ print(product_per_supplier)
 print(total_value_per_supplier)
 print(product_under_ten)
 # save the change xlsx file in new one
-inv_file.save("inventory-new.xlsx")
+inv_file.save("inventory-new.xlsx")"""
+
+muhmdreza = User("mgh2711@gmail.com", "muhmdrezA", 12345, "developer")
+muhmdreza.user_get_info()
