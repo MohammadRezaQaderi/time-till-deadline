@@ -1,6 +1,7 @@
 import openpyxl as xl
 from user import User
 from post import Post
+import requests
 """message = "This is a simple message"  # string
 day = 9  # integer
 price = 19.99  # float
@@ -56,3 +57,6 @@ muhmdreza.user_get_info()
 
 new_post = Post("on a secret mission today", muhmdreza.name)
 new_post.get_post_info()
+
+response = requests.get("https://github.com/api/v4/users/MohammadRezaQaderi/projects")
+print(response.json())
